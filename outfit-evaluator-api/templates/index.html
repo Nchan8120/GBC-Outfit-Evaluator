@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Outfit Evaluator</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 AI Outfit Evaluator</h1>
+            <p>Get AI-powered fashion advice and style suggestions</p>
+        </div>
+
+        <div class="main-content">
+            <div class="upload-section" onclick="document.getElementById('fileInput').click()">
+                <div class="upload-icon">📸</div>
+                <h3>Upload Your Outfit Photo</h3>
+                <p>Click here or drag and drop an image</p>
+                <button type="button" class="upload-btn" style="margin-top: 20px;">Choose File</button>
+                <input type="file" id="fileInput" class="file-input" accept="image/*">
+                <img id="previewImage" class="preview-image" style="display: none;">
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="occasion">Occasion</label>
+                    <select id="occasion">
+                        <option value="casual_hangout">Casual Hangout</option>
+                        <option value="job_interview">Job Interview</option>
+                        <option value="date_night">Date Night</option>
+                        <option value="work_meeting">Work Meeting</option>
+                        <option value="formal_event">Formal Event</option>
+                        <option value="beach_vacation">Beach/Vacation</option>
+                        <option value="night_out">Night Out</option>
+                        <option value="business_casual">Business Casual</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="style_preference">Style Preference (Optional)</label>
+                    <select id="style_preference">
+                        <option value="">Select style...</option>
+                        <option value="minimalist">Minimalist</option>
+                        <option value="bold">Bold & Colorful</option>
+                        <option value="classic">Classic</option>
+                        <option value="trendy">Trendy</option>
+                        <option value="edgy">Edgy</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="analyzeBtn" class="analyze-btn" disabled>
+                Analyze My Outfit
+            </button>
+
+            <div class="error" id="errorMessage"></div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <h3>Analyzing your outfit...</h3>
+                <p>This may take a few seconds</p>
+            </div>
+
+            <div class="results" id="results">
+                <div class="score-display">
+                    <div class="score-number" id="scoreNumber">0</div>
+                    <div class="score-text" id="scoreText">Style Score</div>
+                </div>
+
+                <div class="detected-items" id="detectedItems">
+                    <h3>👕 Detected Items & Colors</h3>
+                    <div class="items-grid" id="itemsGrid">
+                        <!-- Detected items will be populated here -->
+                    </div>
+                </div>
+
+                <div class="breakdown" id="breakdown">
+                    <!-- Score breakdown will be populated here -->
+                </div>
+
+                <div class="suggestions" id="suggestions">
+                    <h3>💡 Style Suggestions</h3>
+                    <div id="suggestionsList">
+                        <!-- Suggestions will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="api-info">
+                <h3>🔗 API Endpoints</h3>
+                <div class="api-endpoints">
+                    <div class="endpoint">
+                        <div class="endpoint-method">POST /analyze</div>
+                        <div>Analyze outfit with AI suggestions</div>
+                    </div>
+                    <div class="endpoint">
+                        <div class="endpoint-method">GET /occasions</div>
+                        <div>Get available occasions</div>
+                    </div>
+                    <div class="endpoint">
+                        <div class="endpoint-method">GET /health</div>
+                        <div>Check API health status</div>
+                    </div>
+                    <div class="endpoint">
+                        <div class="endpoint-method">GET /docs</div>
+                        <div>Interactive API documentation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

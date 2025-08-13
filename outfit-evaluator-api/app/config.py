@@ -20,7 +20,7 @@ MODEL_PATH = BASE_DIR / "Models" / "best.pt"
 UPLOAD_DIR = BASE_DIR / "uploads"
 
 # API Keys
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyAkofBVbDLVvudmNfLPcP-P-IPe_ApHw80")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "your-gemini-api-key-here")
 
 # Model Settings
 YOLO_MODEL_NAME = "best.pt"
