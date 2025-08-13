@@ -1,0 +1,23 @@
+# Core API Framework
+fastapi==0.116.1
+uvicorn==0.35.0
+python-multipart==0.0.20
+
+# AI/ML Libraries
+torch==2.7.1
+torchvision==0.22.1
+ultralytics==8.3.169
+clip==1.0
+scikit-learn==1.6.1
+
+# Computer Vision & Image Processing
+opencv-python==4.10.0
+pillow==11.1.0
+numpy==1.26.4
+colorthief==0.2.1
+
+# Web & API
+pydantic==2.11.7
+
+#LLMs and Generative AI
+google-generativeai==0.8.5
